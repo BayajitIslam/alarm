@@ -5,4 +5,5 @@ class AppColors {
   static const Color background = Color(0xFF212327);
   static const Color primary = Color(0xFFFFFFFF);
   static const Color secandary = Color(0xFF858485);
+  static const Color buttonBg = Color(0xFF4D4D4D);
 }
