@@ -69,13 +69,21 @@ class LocationScreen extends StatelessWidget {
                       pos.latitude,
                       pos.longitude,
                     );
-
-                    // ignore: unnecessary_null_comparison
                     if (placemarks.isNotEmpty) {
                       Placemark place = placemarks[0];
                       String address =
                           "${place.street}, ${place.locality}, ${place.country}";
                       db.write("location", address);
+                      if (kDebugMode) {
+                        print("location : ${db.read("location")}");
+                      }
+
+                      //<=========== route to home ==========>
+                      Navigator.push(
+                        // ignore: use_build_context_synchronously
+                        context,
+                        MaterialPageRoute(builder: (context) => Home()),
+                      );
                     }
                   }
                 } catch (e) {
@@ -93,6 +101,11 @@ class LocationScreen extends StatelessWidget {
               buttonName: AppStatic.home,
 
               onTap: () {
+                //<=========== print location ==========>
+
+                if (kDebugMode) {
+                  print("location : ${db.read("location")}");
+                }
                 //<=========== route to home ==========>
                 Navigator.push(
                   context,

@@ -38,6 +38,8 @@ dependencies:
   geolocator: ^14.0.2
   get_storage: ^2.1.1
   geocoding: ^4.0.0
+  flutter_datetime_picker_plus: ^2.2.0
+  intl: ^0.20.2
 
 dev_dependencies:
   flutter_test:
