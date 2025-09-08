@@ -77,13 +77,12 @@ class LocationScreen extends StatelessWidget {
                       if (kDebugMode) {
                         print("location : ${db.read("location")}");
                       }
-
                       //<=========== route to home ==========>
-                      Navigator.push(
-                        // ignore: use_build_context_synchronously
-                        context,
-                        MaterialPageRoute(builder: (context) => Home()),
-                      );
+                Navigator.push(
+                  // ignore: use_build_context_synchronously
+                  context,
+                  MaterialPageRoute(builder: (context) => Home()),
+                );
                     }
                   }
                 } catch (e) {

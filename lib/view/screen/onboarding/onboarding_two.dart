@@ -2,6 +2,7 @@ import 'package:alarm/util/app_color/app_colors.dart';
 import 'package:alarm/util/app_image/app_image.dart';
 import 'package:alarm/util/app_static_text/app_static.dart';
 import 'package:alarm/view/screen/location/location_screen.dart';
+import 'package:alarm/view/screen/onboarding/onboarding_three.dart';
 import 'package:alarm/view/widget/custome_button/custome_button.dart';
 import 'package:alarm/view/widget/custome_indicator/custome_indicator.dart';
 import 'package:alarm/view/widget/custome_text/custome_text.dart';
@@ -98,12 +99,12 @@ class OnboardingTwo extends StatelessWidget {
                 //<=========== Route to  next pages ==========>
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LocationScreen()),
+                  MaterialPageRoute(builder: (context) => OnboardingThree()),
                 );
               },
             ),
           ),
-          SizedBox(height: 70),
+         SizedBox(height: 10,)
         ],
       ),
     );

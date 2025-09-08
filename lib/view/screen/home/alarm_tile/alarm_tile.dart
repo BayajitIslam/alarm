@@ -14,8 +14,6 @@ class AlarmTile extends StatelessWidget {
     required this.onChanged,
   });
 
-  final bool alarmValue = false;
-
   @override
   Widget build(BuildContext context) {
     //extract date and time
@@ -32,7 +30,7 @@ class AlarmTile extends StatelessWidget {
         color: AppColors.buttonBg,
         borderRadius: BorderRadius.circular(8),
       ),
-      margin: EdgeInsets.only(top: 10),
+      margin: EdgeInsets.only(bottom: 10),
       padding: EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         children: [

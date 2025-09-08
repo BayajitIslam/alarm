@@ -131,8 +131,8 @@ class _HomeState extends State<Home> {
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
+
             //<=========== List Of Alarm ==========>
-            SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
                 itemCount: alarmList.length,
