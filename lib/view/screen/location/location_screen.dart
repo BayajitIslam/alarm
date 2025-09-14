@@ -60,29 +60,23 @@ class LocationScreen extends StatelessWidget {
               onTap: () async {
                 //<=========== Location Acces Method ==========>
                 try {
-                  Position pos = await lc.determinePosition();
-                  if (kDebugMode) {
-                    print(
-                      "Latitude: ${pos.latitude}, Longitude: ${pos.longitude}",
-                    );
-                    List<Placemark> placemarks = await placemarkFromCoordinates(
-                      pos.latitude,
-                      pos.longitude,
-                    );
-                    if (placemarks.isNotEmpty) {
-                      Placemark place = placemarks[0];
-                      String address =
-                          "${place.street}, ${place.locality}, ${place.country}";
-                      db.write("location", address);
-                      if (kDebugMode) {
-                        print("location : ${db.read("location")}");
-                      }
-                      //<=========== route to home ==========>
-                Navigator.push(
-                  // ignore: use_build_context_synchronously
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
+                  Position pos = await lc.getCurrentLocation();
+
+                  List<Placemark> placemarks = await placemarkFromCoordinates(
+                    pos.latitude,
+                    pos.longitude,
+                  );
+                  if (placemarks.isNotEmpty) {
+                    Placemark place = placemarks[0];
+                    String address =
+                        "${place.street}, ${place.locality}, ${place.country}";
+                    db.write("location", address);
+                    //<=========== route to home ==========>
+                    if (context.mounted) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Home()),
+                      );
                     }
                   }
                 } catch (e) {
