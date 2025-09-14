@@ -34,24 +34,30 @@ class OnboardingThree extends StatelessWidget {
             ),
 
             //<=========== Skip Button ==========>
-              child: Padding(
-              padding: const EdgeInsets.only(top: 32,left: 12),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 32, left: 12),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LocationScreen()),
-                  );
-                },
-                child: CustomeText(text: AppStatic.skip,fontSize: 16,fontWeight: FontWeight.bold,),
-              ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LocationScreen(),
+                        ),
+                      );
+                    },
+                    child: CustomeText(
+                      text: AppStatic.skip,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
-            )
+            ),
           ),
 
           //<=========== Title ==========>
@@ -91,10 +97,14 @@ class OnboardingThree extends StatelessWidget {
 
               onTap: () {
                 //<=========== Route to  next pages ==========>
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LocationScreen()),
+                );
               },
             ),
           ),
-          SizedBox(height: 10,)
+          SizedBox(height: 10),
         ],
       ),
     );

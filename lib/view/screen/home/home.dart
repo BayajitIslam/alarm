@@ -3,9 +3,11 @@ import 'package:alarm/util/app_color/app_colors.dart';
 import 'package:alarm/util/app_image/app_image.dart';
 import 'package:alarm/util/app_static_text/app_static.dart';
 import 'package:alarm/util/local_database/local_database.dart';
+import 'package:alarm/util/local_notification/local_notification.dart';
 import 'package:alarm/view/screen/home/alarm_tile/alarm_tile.dart';
 import 'package:alarm/view/widget/custome_button/custome_button.dart';
 import 'package:alarm/view/widget/custome_text/custome_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 
@@ -112,6 +114,9 @@ class _HomeState extends State<Home> {
                                   ),
                                 );
                               });
+                              LocalNotification().scheduleReminder(
+                                alarm: alarmList,
+                              );
                             },
                           );
                         },

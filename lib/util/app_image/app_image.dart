@@ -5,4 +5,5 @@ class AppImage {
   static const String wellcome = "assets/wellcome.png";
   static const String location = "assets/location.png";
   static const String locationTwo = "assets/locationTwo.png";
+  static const String appIcon = "assets/app_icon.png";
 }

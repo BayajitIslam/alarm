@@ -1,7 +1,11 @@
+import 'package:alarm/util/local_notification/local_notification.dart';
 import 'package:alarm/view/screen/onboarding/onboarding_one.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalNotification().init();
+
   runApp(const MyApp());
 }
 

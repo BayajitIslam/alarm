@@ -40,6 +40,9 @@ dependencies:
   geocoding: ^4.0.0
   flutter_datetime_picker_plus: ^2.2.0
   intl: ^0.20.2
+  flutter_local_notifications: ^19.4.2
+  flutter_timezone: ^4.1.1
+  timezone: ^0.10.1
 
 dev_dependencies:
   flutter_test:
